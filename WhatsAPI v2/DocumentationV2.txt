@@ -1,0 +1,141 @@
+NAME
+       WhatsApi
+
+FONCTIONS
+        list_util()
+        ajouter_util()
+        info_util()
+        voir_amis()
+        ajouter_amis()
+        supprimer_amis()
+
+
+DESCRIPTION
+       
+    list_util()
+        Cette fonction permet d'afficher tous les utilisateurs de WhatsAPI.
+
+        OUTPUT
+    
+            Type Dict {
+                status : 
+                data : []
+                }
+    
+            status -> data : 
+                0 -> [{id_utilisateur : (type INT), pseudo_utilisateur : (type STR)}, . . . ]
+                1 -> 'INPUT Type incorrect'
+                2 -> 'INPUT Lenght incorrect'
+                3 -> 'INPUT Not Correspond'
+        
+    
+    
+            
+
+    ajouter_util(pseudo_utilisateur)
+        Cette fonction permet d'ajouter un nouvel utilisateur à la base de donnée.
+
+        INPUT
+            pseudo_utilisateur type STR
+
+        OUTPUT
+    
+            Type Dict {
+                status : 
+                data : []
+                }
+            
+            status -> data : 
+                0 -> None
+                1 -> 'INPUT Type not STR'
+                2 -> 'INPUT Lenght not between 5, 20'
+                3 -> 'INPUT already in database'
+
+
+    info_util(pseudo_utilisateur)
+        Cette fonction permet d'afficher les informations relatives à un utilisateur.
+
+        INPUT
+            pseudo_utilisateur type STR
+
+        OUTPUT
+    
+            Type Dict {
+                status : 
+                data : []
+                }
+            
+            status : 
+                0 -> (id_utilisateur type INT, pseudo_utilisateur type STR)
+                1 -> 'INPUT Type not STR'
+                2 -> 'INPUT Lenght not between 5, 20'
+                3 -> 'INPUT Not in database'
+
+    voir_amis(pseudo_utilisateur):
+        Cette fonction permet d'afficher le pseudo des personnes qui sont les amis de "pseudo_utilisateur"
+
+        INPUT
+            pseudo_utilisateur type STR
+
+        OUTPUT
+    
+            Type Dict {
+                status : 
+                data : []
+                }
+            
+            status : 
+                0 -> pseudo_utilisateur type STR, . . . 
+                1 -> 'INPUT Type not STR'
+                2 -> 'INPUT Lenght not between 5, 20'
+                3 -> 'INPUT Not in '
+
+    ajouter_amis(pseudo_utilisateur,pseudo_utilisateur_a_ajouter)
+        Cette fonction permet d'ajouter un amis a un utilisateur précis.
+
+        INPUT
+            pseudo_utiur type STR
+            pseudo_utilisateur_a_ajouter type STR
+
+        OUTPUT
+    
+            Type Dict {
+                status : 
+                data : []
+                }
+            
+            status : 
+                0 -> None
+                1 -> 'INPUT Type not STR'
+                2 -> 'INPUT Lenght not between 5, 20'
+                3 -> 'INPUT Not register in UTILISATEUR'
+                4 -> 'INPUT already register as friend'
+
+    supprimer_amis(pseudo_utilisateur,pseudo_utilisateur_a_supp)
+        Cette fonction permet de supprimer un ami choisit.
+
+        INPUT
+            pseudo_utilisateur type STR
+            pseudo_utilisateur_a_supp type STR
+
+        OUTPUT
+    
+            Type Dict {
+                status : 
+                data : []
+                }
+            
+            status : 
+                0 -> None
+                1 -> 'INPUT Type not STR'
+                2 -> 'INPUT Lenght not between 5, 20'
+                3 -> 'INPUT Not register in UTILISATEUR'
+                4 -> 'INPUT Not in friendlist'
+
+AUTHOR
+       Written by Tom CALVO, Dorian JOSSERAND and Lucas NGUYEN.
+
+
+COPYRIGHT
+       Copyright © 2022 WhatsAPI
+       This is free software: you are free to change and redistribute it.  There is NO WARRANTY, to the extent permitted by law.
